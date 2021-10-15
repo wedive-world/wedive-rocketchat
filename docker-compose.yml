@@ -14,7 +14,7 @@ services:
         done; (exit $$s)"
     restart: unless-stopped
     volumes:
-      - ./uploads:/app/uploads
+      - /root/rocketchat-uploads:/app/uploads
     environment:
       - PORT=3000
       - ROOT_URL=http://localhost:3000
@@ -36,7 +36,7 @@ services:
     image: mongo:latest
     restart: always
     volumes:
-     - ./data/db:/data/db
+     - /root/rocketchat-data/db:/data/db
      #- ./data/dump:/dump
     command: mongod --oplogSize 128 --replSet rs0
     labels:
@@ -79,7 +79,7 @@ services:
     labels:
       - "traefik.enable=false"
     volumes:
-      - ./scripts:/home/hubot/scripts
+      - /root/rocketchat-scripts:/home/hubot/scripts
   # this is used to expose the hubot port for notifications on the host on port 3001, e.g. for hubot-jenkins-notifier
     ports:
       - 4501:8080
