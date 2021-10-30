@@ -79,7 +79,7 @@ services:
   # you can add more scripts as you'd like here, they need to be installable by npm
       - EXTERNAL_SCRIPTS=hubot-help,hubot-seen,hubot-links,hubot-diagnostics
     env_file: 
-      - wedive-secret/chat-service-secret.env
+      - wedive-secret/rocketchat-secret.env
     depends_on:
       - rocketchat
     labels:
