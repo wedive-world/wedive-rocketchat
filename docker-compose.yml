@@ -25,8 +25,8 @@ services:
 #       - HTTPS_PROXY=http://proxy.domain.com
     depends_on:
       - rocketchat-mongo
-    # ports:
-    #   - 4500:3000
+    ports:
+      - 4500:3000
     labels:
       - "traefik.backend=rocketchat"
       - "traefik.frontend.rule=Host: your.domain.tld"
