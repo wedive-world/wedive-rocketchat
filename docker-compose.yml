@@ -38,7 +38,7 @@ services:
     image: mongo:latest
     restart: always
     volumes:
-     - /data:/data
+     - /data/db:/data/db
      - /data/dump:/dump
     command: mongod --oplogSize 128 --replSet rs0
     ports:
